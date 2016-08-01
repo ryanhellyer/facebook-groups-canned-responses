@@ -8,10 +8,16 @@ function showalert(e) {
 	var parent = e.target.parentNode.parentNode.parentNode.parentNode;
 //	console.log(parent);
 
-	var comment_input_wrapper = parent.getElementsByClassName('_1mf _1mj');
-	var comment_input = comment_input_wrapper[0].childNodes[0].childNodes[0];
+	// When text has already been added
+//	var comment_input_wrapper = parent.getElementsByClassName('_1mf _1mj');
+//	var comment_input = comment_input_wrapper[0].childNodes[0].childNodes[0];
+//	comment_input.innerHTML = comment_input.innerHTML+canned_text;
 
-	comment_input.innerHTML = canned_text;
+	// Only works if main box has new text in it, and secondary box is opened
+	var placeholder_text = parent.getElementsByClassName('_1p1v');
+	placeholder_text.remove();
+	console.dir( placeholder_text[0] );
+
 }
 
 
@@ -41,6 +47,7 @@ function add_canned_responses() {
 
 		pulldown[0].innerHTML = '<style>.canned-list-icon div {color:#fff;z-index:9999999999999;display:none;background:rgba(0,0,0,0.7);position:fixed;left:25%;top:25%;width:50%;height:50%;opacity:1;} .canned-list-icon:hover div {display:block;} .canned-list-icon:hover {opacity:1;cursor:pointer;} .canned-list-icon {opacity:0.6;background:url('+list_icon_url+') no-repeat center;float:left;width:23px;height:23px;padding:5px;background-size:50%;}</style><div class="canned-list-icon"><div><span class="canned-item">XXX</span><span class="canned-item">YYY</span><span class="canned-item">ZZZ</span></div></div>'+pulldown[0].innerHTML;
 
+/*
 		// Remove placeholder text
 		var placeholder_text = textarea.getElementsByClassName('_1p1v');
 		placeholder_text[0].remove();
@@ -48,6 +55,7 @@ function add_canned_responses() {
 		// Get textarea text - ready for editing
 		var textarea_text = textareas[key].getElementsByClassName('_1mf _1mj')[0].childNodes[0].innerHTML;
 //		console.log(textarea_text);
+*/
 
 	}
 }
