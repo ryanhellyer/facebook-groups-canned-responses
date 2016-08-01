@@ -1,0 +1,32 @@
+{
+	"name": "Facebook Canned Responses",
+	"version": "0.2",
+	"manifest_version": 2,
+	"description": "Adds canned responses to text areas",
+	"homepage_url": "https://geek.hellyer.kiwi/",
+/*
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": true
+	},
+*/
+	"permissions": [
+		"https://www.facebook.com/"
+//		"storage"
+//		"background",
+//		"tabs"
+	],
+	"web_accessible_resources": [
+		"list-icon.png"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"https://www.facebook.com/*"
+			],
+			"js": [
+				"script.js"
+			]
+		}
+	]
+}
